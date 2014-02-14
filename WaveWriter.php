@@ -32,7 +32,7 @@ class WaveWriter
         $this->_binaryFileWriter->setEndian(1); // LITTLE_ENDIAN
         $this->_bitResolution = (pow(2, $this->_bitsPerSample)/2)-1;
         $dataByteLength = $sampleCount * ($this->_bitsPerSample/8);
-		$fileSize = 32 + 8 + $dataByteLength;
+        $fileSize = 32 + 8 + $dataByteLength;
         
         // RIFF WAVE Chunk
         $this->_binaryFileWriter->writeString("RIFF");
