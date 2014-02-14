@@ -36,17 +36,17 @@ class WaveWriter
         
         // RIFF WAVE Chunk
         $this->_binaryFileWriter->writeString("RIFF");
-		$this->_binaryFileWriter->writeInt($fileSize);
-		$this->_binaryFileWriter->writeString("WAVE");
-		// Format Chunk
-		$this->_binaryFileWriter->writeString("fmt ");
-		$this->_binaryFileWriter->writeInt(16);
-		$this->_binaryFileWriter->writeShort($this->_formatTag);
-		$this->_binaryFileWriter->writeShort($this->_channels);
-		$this->_binaryFileWriter->writeInt($this->_sampleRate);
-		$this->_binaryFileWriter->writeInt($this->_sampleRate * $this->_channels * $this->_bitsPerSample / 8);
-		$this->_binaryFileWriter->writeShort($this->_channels * $this->_bitsPerSample / 8);
-		$this->_binaryFileWriter->writeShort($this->_bitsPerSample);
+        $this->_binaryFileWriter->writeInt($fileSize);
+        $this->_binaryFileWriter->writeString("WAVE");
+        // Format Chunk
+        $this->_binaryFileWriter->writeString("fmt ");
+        $this->_binaryFileWriter->writeInt(16);
+        $this->_binaryFileWriter->writeShort($this->_formatTag);
+        $this->_binaryFileWriter->writeShort($this->_channels);
+        $this->_binaryFileWriter->writeInt($this->_sampleRate);
+        $this->_binaryFileWriter->writeInt($this->_sampleRate * $this->_channels * $this->_bitsPerSample / 8);
+        $this->_binaryFileWriter->writeShort($this->_channels * $this->_bitsPerSample / 8);
+        $this->_binaryFileWriter->writeShort($this->_bitsPerSample);
         // Sound Data Chunk
         $this->_binaryFileWriter->writeString("data");
         $this->_binaryFileWriter->writeInt($dataByteLength);
